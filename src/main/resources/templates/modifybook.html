@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="">
-<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css" th:href="@{/static/css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 
 
 <head>
@@ -35,6 +35,12 @@
         <input type="text" id="bPrice" th:field="*{price}" />
         <div style="clear: both; display: block; height: 10px;"></div>
 
+
+        <label for="clist">Category</label>
+        <select id="clist" th:field="*{category}" class="form-control">
+            <option th:each="category: ${categories}" th:value="${category.categoryid}"
+                    th:text="${category.name}"></option>
+        </select>
         <input class="btn btn-success" type="submit" value="Save">
     </form>
 </div>
