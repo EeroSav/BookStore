@@ -41,6 +41,13 @@ public class BookController {
         return repository.findById(id);
     }
 
+    @RequestMapping(value="/login")
+    public String login() {
+        return "login";
+    }
+
+
+
     @RequestMapping(value = "/add")
     public String addBook(Model model){
         model.addAttribute("book", new Book());
